@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec /mad8DesyPublic/mad8s_amd64_pal "$@"
