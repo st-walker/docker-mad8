@@ -1,3 +1,6 @@
 #!/bin/bash
 
-exec /mad8DesyPublic/mad8s_amd64_pal "$@"
+cp /mad8DesyPublic/mad8s_amd64_pal /mad8/mad8
+cp /mad8DesyPublic/mad8.dict /mad8
+cp /mad8DesyPublic/dict /mad8
+exec /bin/bash "$@"

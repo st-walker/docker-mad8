@@ -6,13 +6,15 @@ I do not bundle the sources here and I have not uploaded this to Docker hub beca
 ## Building the MAD8 image
 
 1. Clone this repo
-3. `$ docker build --tag mad8 docker-mad8/mad8`
-4. `$ docker run -i mad8 < myfile.mad8 `
+2. `$ docker build --tag mad8 docker-mad8/mad8`
+3. `$ cd to/where/my/mad8/scripts/are`
+4. `$ docker run -it --mount src="$(pwd)",target=/mad8-workdir,type=bind mad8`
+5. `$ ./mad8 < my-favourite-job.mad8`
 
 ## Alternative solutions that I am aware of
 
 and why I don't use them:
 
-- http://hywelowen.org/running-mad8-on-osx-10-8-mountain-lion/ - Uses 32bit binaries so this doesn't work on later MacOS versions that have abandoned support for 32bit executables.
-- https://hub.docker.com/r/manacc/mad8/ - Doesn't work.  Original Dockerfile and sources nowhere to be found so I couldn't try to fix, which motivated me to make this.
-- https://github.com/manacc/mad8 - I couldn't get it to compile; I got some strange linker errors and I gave up rather quickly.
+1. http://hywelowen.org/running-mad8-on-osx-10-8-mountain-lion/ - Uses 32bit binaries so this doesn't work on later MacOS versions that have abandoned support for 32bit executables.
+2. https://github.com/manacc/mad8 - I couldn't get it to compile; I got some strange linker errors and I gave up rather quickly.
+3. https://hub.docker.com/r/manacc/mad8/ - Doesn't work.  Source is presumably at number 2 but the Dockerfile is missing and I couldn't get it to compile anyway.

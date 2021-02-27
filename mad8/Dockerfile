@@ -9,9 +9,11 @@ RUN yum install -y \
     && yum clean all \
     && unzip mad8DesyPublic_8.51.18.zip
 
-COPY entry-point /mad8DesyPublic/entry-point
 
-WORKDIR /mad8DesyPublic/
-ENTRYPOINT ["/mad8DesyPublic/entry-point"]
+COPY entry-point /entry-point
+
+WORKDIR /mad8/
+
+ENTRYPOINT ["/entry-point"]
 
 LABEL maintainer="stuart.walker@desy.de"
